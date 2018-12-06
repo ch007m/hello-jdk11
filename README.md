@@ -77,4 +77,19 @@ time="2018-12-06T09:29:36Z" level=debug msg="wait program exit" program=run-jdk1
 2018-12-06 09:29:45.435  INFO 116 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
 2018-12-06 09:29:46.439  INFO 116 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
 2018-12-06 09:29:46.452  INFO 116 --- [           main] c.g.t.h.HelloGatewayApplication          : Started HelloGatewayApplication in 9.792 seconds (JVM running for 10.703)
+
+# Create a route
+
+# Query the endpoint
+http http://hello-gateway-jdk11.192.168.99.50.nip.io/services
+HTTP/1.1 200 OK
+Cache-control: private
+Content-Length: 17
+Content-Type: application/json;charset=UTF-8
+Set-Cookie: 053b048eccb26e4976f3164cced01aaf=da243252b6e7a99fe85906bddfa35f13; path=/; HttpOnly
+
+[
+    "hello-gateway"
+]
+
 ```
