@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: hello-service
+          uri: http://hello-service:8080
+          predicates:
+            - Path=/hello/**
+          filters:
+            - StripPrefix=1
+logging:
+  level:
+    root: info
